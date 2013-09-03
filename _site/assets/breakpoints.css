@@ -1,0 +1,13 @@
+/* Breakpoints.scss
+================================================================================
+
+- This is where the site is adapted to various devices
+- Usually we have the following layouts: 1. from mobile to tablet-portrait 2. from tablet-landscape to Mac's 1440x900 3. for big screens
+
+*/
+/* Responsive mixins - http://paulstamatiou.com/responsive-retina-blog-development-part-1
+*/
+@media only screen and (max-width: 767px) { .mobile { display: block; }
+  .desktop { display: none !important; } }
+@media only screen and (min-width: 768px) { .mobile { display: none; }
+  .desktop { display: block; } }

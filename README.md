@@ -6,4 +6,6 @@ This is a quest to find the perfect design. Not visually but in the underlying c
 
 1. The length of the SCSS code for each page must be less or equal than the HTML it serves
 
+2. Use HTML classes or ids only for jQuery navigation
+
 

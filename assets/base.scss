@@ -1,0 +1,75 @@
+/* Base.scss
+================================================================================
+
+- A collection of snippets, best practices reusable in every project
+- It is my personal boilerplate
+
+*/
+
+
+
+
+
+/* Metrics
+--------------------------------------------------------------------------------
+
+- Vertical and horizontal positioning
+- This sets the rhythm of the entire page
+
+*/
+
+
+/* The basic metric for typography and spacing
+*/
+$pad: 1.25em;
+
+
+
+/* The basic metric for positioning. It is the golden ratio
+*/
+$minor: 38.196%;
+$major: 61.804%;
+$margin: 5%; /* This varies from project to project */
+
+
+
+
+/* The Grid
+--------------------------------------------------------------------------------
+
+- I employ the 'Fit to screen' principle
+- Longer pages are divided into slides, each slide fills completely the screen
+- Read more at http://its-csongor.com/manifesto/#ch2
+
+- However this works only on desktop; for mobile classic scrolling must be enabled. Or slides 'removed', 'merged'.
+
+*/
+
+
+@mixin slides {
+  /* Set all parents to full height. This will let position elements with % instead of em */
+  html, body, .container, #content, section {
+    height: 100%;
+    
+    /* On non desktop displays slides are removed */
+    /* If not the background image will scroll together with the content which gives sometimes a very cool effect */
+    @include small-screen-and-below {
+      height: auto;
+    }
+  }
+  
+  html {
+    body {
+      .container {
+        section {
+          position: relative;
+          background-position: top center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+      }
+    }
+  }
+  
+}

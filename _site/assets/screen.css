@@ -15,3 +15,56 @@ q:before, q:after, blockquote:before, blockquote:after { content: ""; content: n
 a img { border: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+
+/* General, reusable code: typography, grid, etc. */
+/* Breakpoints.scss
+================================================================================
+
+- This is where the site is adapted to various devices
+- Usually we have the following layouts: 1. from mobile to tablet-portrait 2. from tablet-landscape to Mac's 1440x900 3. for big screens
+
+*/
+/* Responsive mixins - http://paulstamatiou.com/responsive-retina-blog-development-part-1
+*/
+@media only screen and (max-width: 767px) { .mobile { display: block; }
+  .desktop { display: none !important; } }
+@media only screen and (min-width: 768px) { .mobile { display: none; }
+  .desktop { display: block; } }
+/* Base.scss
+================================================================================
+
+- A collection of snippets, best practices reusable in every project
+- It is my personal boilerplate
+
+*/
+/* Metrics
+--------------------------------------------------------------------------------
+
+- Vertical and horizontal positioning
+- This sets the rhythm of the entire page
+
+*/
+/* The basic metric for typography and spacing
+*/
+/* The basic metric for positioning. It is the golden ratio
+*/
+/* This varies from project to project */
+/* The Grid
+--------------------------------------------------------------------------------
+
+- I employ the 'Fit to screen' principle
+- Longer pages are divided into slides, each slide fills completely the screen
+- Read more at http://its-csongor.com/manifesto/#ch2
+
+- However this works only on desktop; for mobile classic scrolling must be enabled. Or slides 'removed', 'merged'.
+
+*/
+/* Site specific code */
+/* Set all parents to full height. This will let position elements with % instead of em */
+html, body, .container, #content, section { height: 100%; /* On non desktop displays slides are removed */ /* If not the background image will scroll together with the content which gives sometimes a very cool effect */ }
+@media only screen and (max-width: 1023px) { html, body, .container, #content, section { height: auto; } }
+
+html body .container section { position: relative; background-position: top center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; }
+
+html body .container section:nth-of-type(1) { background: red; }
+html body .container section:nth-of-type(2) { background: blue; }
