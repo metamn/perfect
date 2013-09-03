@@ -27,3 +27,15 @@
 - However this works only on desktop; for mobile classic scrolling must be enabled. Or slides 'removed', 'merged'.
 
 */
+/* Navigation
+--------------------------------------------------------------------------------
+
+- It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
+- It always contains a list which can be made displayed inline, or as is
+
+*/
+/* Common elements and mixins
+--------------------------------------------------------------------------------
+*/
+/* list, inline 
+*/

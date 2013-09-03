@@ -71,5 +71,70 @@ $margin: 5%; /* This varies from project to project */
       }
     }
   }
-  
 }
+
+
+
+
+/* Navigation
+--------------------------------------------------------------------------------
+
+- It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
+- It always contains a list which can be made displayed inline, or as is
+
+*/
+
+@mixin navigation($type: normal) {
+  @include block;
+  
+  h3 {
+    display: none;
+  }
+  
+  @if $type == inline {
+    ul {
+      @include list-inline;
+    }
+  }
+}
+
+
+
+
+/* Common elements and mixins
+--------------------------------------------------------------------------------
+*/
+
+@mixin block {
+  width: 100%;
+  float: left;
+}
+
+
+@mixin hidden {
+  display: none;
+}
+
+
+/* list, inline 
+*/
+@mixin list-inline {
+  display: block;
+  margin: 0;
+  
+  li {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 0;
+    float: left;
+    margin-right: $pad;
+    
+    &.last, &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+
+
+
