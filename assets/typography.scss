@@ -2,33 +2,45 @@
 ================================================================================
 
 - Setting fonts, headers, forms, table et all
-- Can use metrics, breakpoints et all defined a priori in screen.scss
+- Can use metrics, breakpoints, colors et all defined a priori in screen.scss
 - It is the simplest possible
+
+- The most used elements are:
+  - headings
+  - body text
+  - lists
+  - form
+  - table
+  - quote
 
 */
 
 
 
-
+/* One fonmt with rich variants where possible */
 @mixin font {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 
 
+/* The single styling is the default underline */
 @mixin link($type : normal) {
   a {
+    color: $color;
     text-decoration: underline;
   }
   
   @if $type == none {
     a {
+      color: $color;
       text-decoration: none;
     }
   }
 }
 
 
+/* Long text like posts, with enhanced readability */
 @mixin text($type : body) {
   @if $type == body {
     max-width: 600px;
@@ -45,26 +57,38 @@ body {
   font-size: 100%;
   line-height: 1.25;
   
+  background: $background;
+  color: $color;
+  
   @include font;
   @include link(none);
   
   .container {
-    
+  
     /* Headings
-     -----------------------------------------------
+     ---------------------------------------------------------------------------
     */
 
     /* 
      - 'Traditional in em' scheme from http://lamb.cc/typograph/
+     - They don't differ by size but decoration
     */
 
-    h1 { font-size:1.5em; padding:1.45833em 0; }
-    h2 { font-size:1.33333em; padding:1.25em 0; }
-    h3 { font-size:1.16667em; padding:1.51785em 0; }
+    h1, h2, h3 { font-size:1.5em; padding:1.45833em 0; }
+    h4, h5, h6 { font-size:1.16667em; padding:1.51785em 0; }
+    
+    h1 {
+      font-weight: 400;
+    }
+    
+    h3 {
+      font-variant: small-caps;
+    }
+    
 
 
     /* Block level elements
-    // -----------------------------------------------
+    // -------------------------------------------------------------------------
     */
 
     /* the second <p> has a top margin */
@@ -181,7 +205,7 @@ body {
     input, textarea, select {
 	    border: none;
 	    outline: 0;
-	    background: white;
+	    background: $background;
 	
 	    appearance: none;
 	    -webkit-appearance: none;
@@ -193,24 +217,24 @@ body {
 	    border: 1px solid transparent;
 	    border-bottom: 1px solid;
 	    font-style: italic;
-	    color: gray;
+	    color: $gray-3;
     }
     input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, textarea:focus {
-	    color: black;
+	    color: $color;
 	    font-style: normal;
-	    border: 1px solid #ccc;
+	    border: 1px solid $gray-3;
 	    border-bottom: 1px solid;
     }
 
     /* Button */
     input[type='submit'] {		
-	    background: black;
-	    color: lightgray;
+	    background: $color;
+	    color: $gray-1;
 	    padding: $pad/2;
 	    
 	    &:hover {
 	      cursor: pointer;
-	      color: white;
+	      color: $background;
 	    }
     }
     
@@ -248,11 +272,11 @@ body {
 	    line-height: .5;
 	    vertical-align: top;
 	
-	    color: lightgray;
+	    color: $gray-1;
     }
     input[type='checkbox']:checked + label:before {
       content: '\2611';
-	    color: black;
+	    color: $color;
     }
     
     
@@ -276,7 +300,7 @@ body {
       padding: 0 .45em;
       position: relative;
       left: 0;
-      background: white;
+      background: $background;
       
       
       pointer-events: none; /* this is a must */

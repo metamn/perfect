@@ -59,6 +59,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 - However this works only on desktop; for mobile classic scrolling must be enabled. Or slides 'removed', 'merged'.
 
 */
+/* Colors
+--------------------------------------------------------------------------------
+
+- Basic colors to define typographic elements like links and forms
+- These can be changed per project.
+- However these defaults represent my style
+- The basic idea is that pure white and black are not recommended for use, they are too strong
+
+*/
+/* The basic color in Kuler */
 /* Navigation
 --------------------------------------------------------------------------------
 
@@ -75,17 +85,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 ================================================================================
 
 - Setting fonts, headers, forms, table et all
-- Can use metrics, breakpoints et all defined a priori in screen.scss
+- Can use metrics, breakpoints, colors et all defined a priori in screen.scss
 - It is the simplest possible
 
+- The most used elements are: - headings - body text - lists - form - table - quote
+
 */
-body { font-size: 100%; line-height: 1.25; font-family: 'Lato', sans-serif; font-weight: 300; }
-body a { text-decoration: underline; }
-body a { text-decoration: none; }
-body .container { /* Headings -----------------------------------------------
-*/ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/
+/* One fonmt with rich variants where possible */
+/* The single styling is the default underline */
+/* Long text like posts, with enhanced readability */
+body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; font-weight: 300; }
+body a { color: #3a3a3a; text-decoration: underline; }
+body a { color: #3a3a3a; text-decoration: none; }
+body .container { /* Headings ---------------------------------------------------------------------------
+*/ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/ - They don't differ by size but decoration
 */ /* Block level elements
-// -----------------------------------------------
+// -------------------------------------------------------------------------
 */ /* the second <p> has a top margin */ /* blockquote is simply indented, enlarged */ /* address is small caps */ /* Lists
 // -----------------------------------------------
 */ /* Tables
@@ -97,9 +112,10 @@ body .container { /* Headings -----------------------------------------------
 */ /* Reset browser defaults */ /* Text */ /* Button */ /* Cross browser compatible styling: http://www.inserthtml.com/2012/06/custom-form-radio-checkbox/ - the checkbox and radio button is not displayed - instead a label is displayed which can be styled with 'content' 
 */ /* Select box  - put inside a <label class="select"> - label:after is positioned over the original selectbox arrow - additionally padding & relative positioning must be overwritten later in the new context
 */ }
-body .container h1 { font-size: 1.5em; padding: 1.45833em 0; }
-body .container h2 { font-size: 1.33333em; padding: 1.25em 0; }
-body .container h3 { font-size: 1.16667em; padding: 1.51785em 0; }
+body .container h1, body .container h2, body .container h3 { font-size: 1.5em; padding: 1.45833em 0; }
+body .container h4, body .container h5, body .container h6 { font-size: 1.16667em; padding: 1.51785em 0; }
+body .container h1 { font-weight: 400; }
+body .container h3 { font-variant: small-caps; }
 body .container p + p { margin-top: 1.25em; }
 body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 1px dotted; padding-left: 1.25em; font-style: italic; font-size: larger; }
 body .container address { font-variant: small-caps; }
@@ -116,19 +132,19 @@ body .container table td, body .container table th, body .container table tr { t
 body .container table td { border-bottom: 1px solid; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
-body .container input, body .container textarea, body .container select { border: none; outline: 0; background: white; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
-body .container input[type='text'], body .container input[type='email'], body .container input[type='password'], body .container textarea { border: 1px solid transparent; border-bottom: 1px solid; font-style: italic; color: gray; }
-body .container input[type='text']:focus, body .container input[type='email']:focus, body .container input[type='password']:focus, body .container textarea:focus { color: black; font-style: normal; border: 1px solid #ccc; border-bottom: 1px solid; }
-body .container input[type='submit'] { background: black; color: lightgray; padding: 0.625em; }
-body .container input[type='submit']:hover { cursor: pointer; color: white; }
+body .container input, body .container textarea, body .container select { border: none; outline: 0; background: #f9f9f9; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
+body .container input[type='text'], body .container input[type='email'], body .container input[type='password'], body .container textarea { border: 1px solid transparent; border-bottom: 1px solid; font-style: italic; color: #797979; }
+body .container input[type='text']:focus, body .container input[type='email']:focus, body .container input[type='password']:focus, body .container textarea:focus { color: #3a3a3a; font-style: normal; border: 1px solid #797979; border-bottom: 1px solid; }
+body .container input[type='submit'] { background: #3a3a3a; color: #dfdfdf; padding: 0.625em; }
+body .container input[type='submit']:hover { cursor: pointer; color: #f9f9f9; }
 body .container input[type='radio'], body .container input[type='checkbox'] { display: none; }
 body .container input[type='radio'] + label, body .container input[type='checkbox'] + label { display: inline-block; }
 body .container input[type='radio'] + label:after { content: '\2610'; margin-right: 0.625em; }
 body .container input[type='radio']:checked + label:after { content: '\25a3'; }
-body .container input[type='checkbox'] + label:before { content: '\2610'; margin-right: 0.3125em; font-size: 200%; line-height: .5; vertical-align: top; color: lightgray; }
-body .container input[type='checkbox']:checked + label:before { content: '\2611'; color: black; }
+body .container input[type='checkbox'] + label:before { content: '\2610'; margin-right: 0.3125em; font-size: 200%; line-height: .5; vertical-align: top; color: #dfdfdf; }
+body .container input[type='checkbox']:checked + label:before { content: '\2611'; color: #3a3a3a; }
 body .container select { border-bottom: 1px solid gray; cursor: pointer; width: 100%; }
-body .container label.select:after { content: '\003E'; float: right; display: inline-block; padding: 0 .45em; position: relative; left: 0; background: white; pointer-events: none; /* this is a must */ cursor: pointer; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
+body .container label.select:after { content: '\003E'; float: right; display: inline-block; padding: 0 .45em; position: relative; left: 0; background: #f9f9f9; pointer-events: none; /* this is a must */ cursor: pointer; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
 
 /* Site specific code */
 /* Set all parents to full height. This will let position elements with % instead of em */
@@ -143,4 +159,4 @@ html body .container #navigation ul { display: block; margin: 0; }
 html body .container #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
 html body .container #navigation ul li.last, html body .container #navigation ul li:last-of-type { margin-right: 0; }
 html body .container section { max-width: 600px; line-height: 1.75; }
-html body .container section a { text-decoration: underline; }
+html body .container section a { color: #3a3a3a; text-decoration: underline; }

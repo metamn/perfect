@@ -34,6 +34,8 @@ $margin: 5%; /* This varies from project to project */
 
 
 
+
+
 /* The Grid
 --------------------------------------------------------------------------------
 
@@ -72,6 +74,31 @@ $margin: 5%; /* This varies from project to project */
     }
   }
 }
+
+
+
+
+
+/* Colors
+--------------------------------------------------------------------------------
+
+- Basic colors to define typographic elements like links and forms
+- These can be changed per project.
+- However these defaults represent my style
+- The basic idea is that pure white and black are not recommended for use, they are too strong
+
+*/
+
+
+$background: #f9f9f9; /* The basic color in Kuler */
+$color: #3A3A3A;
+$pink: #FAAFAF;
+
+$gray-1: #DFDFDF;
+$gray-2: #B9B9B9;
+$gray-3: #797979;
+
+
 
 
 

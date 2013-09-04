@@ -27,6 +27,16 @@
 - However this works only on desktop; for mobile classic scrolling must be enabled. Or slides 'removed', 'merged'.
 
 */
+/* Colors
+--------------------------------------------------------------------------------
+
+- Basic colors to define typographic elements like links and forms
+- These can be changed per project.
+- However these defaults represent my style
+- The basic idea is that pure white and black are not recommended for use, they are too strong
+
+*/
+/* The basic color in Kuler */
 /* Navigation
 --------------------------------------------------------------------------------
 
