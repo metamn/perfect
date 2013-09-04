@@ -135,15 +135,15 @@ body .container table td { border-bottom: 1px solid; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
 body .container input, body .container textarea, body .container select { border: none; outline: 0; background: #f9f9f9; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
-body .container input[type='text'], body .container input[type='email'], body .container input[type='password'], body .container textarea { border: 1px solid transparent; border-bottom: 1px solid; font-style: italic; color: #797979; }
-body .container input[type='text']:focus, body .container input[type='email']:focus, body .container input[type='password']:focus, body .container textarea:focus { color: #3a3a3a; font-style: normal; border: 1px solid #797979; border-bottom: 1px solid; }
-body .container input[type='submit'] { background: #3a3a3a; color: #dfdfdf; padding: 0.625em; }
+body .container input[type='text'], body .container input[type='email'], body .container input[type='password'], body .container textarea { border: 1px solid transparent; border-bottom: 1px solid; font-style: italic; color: #b9b9b9; }
+body .container input[type='text']:focus, body .container input[type='email']:focus, body .container input[type='password']:focus, body .container textarea:focus { color: #3a3a3a; font-style: normal; border: 1px solid #b9b9b9; border-bottom: 1px solid; }
+body .container input[type='submit'] { background: #3a3a3a; color: #f1f1f1; padding: 0.625em; }
 body .container input[type='submit']:hover { cursor: pointer; color: #f9f9f9; }
 body .container input[type='radio'], body .container input[type='checkbox'] { display: none; }
 body .container input[type='radio'] + label, body .container input[type='checkbox'] + label { display: inline-block; }
 body .container input[type='radio'] + label:after { content: '\2610'; margin-right: 0.625em; }
 body .container input[type='radio']:checked + label:after { content: '\25a3'; }
-body .container input[type='checkbox'] + label:before { content: '\2610'; margin-right: 0.3125em; font-size: 200%; line-height: .5; vertical-align: top; color: #dfdfdf; }
+body .container input[type='checkbox'] + label:before { content: '\2610'; margin-right: 0.3125em; font-size: 200%; line-height: .5; vertical-align: top; color: #f1f1f1; }
 body .container input[type='checkbox']:checked + label:before { content: '\2611'; color: #3a3a3a; }
 body .container select { border-bottom: 1px solid gray; cursor: pointer; width: 100%; }
 body .container label.select:after { content: '\003E'; float: right; display: inline-block; padding: 0 .45em; position: relative; left: 0; background: #f9f9f9; pointer-events: none; /* this is a must */ cursor: pointer; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
@@ -151,18 +151,22 @@ body .container label.select:after { content: '\003E'; float: right; display: in
 /* Site specific code */
 /* Set all parents to full height. This will let position elements with % instead of em */
 html, body, .container, #content, section { height: 100%; /* On non desktop displays slides are removed */ /* If not the background image will scroll together with the content which gives sometimes a very cool effect */ }
-@media only screen and (max-width: 1023px) { html, body, .container, #content, section { height: auto; } }
+@media only screen and (max-width: 1023px) { html, body, .container, #content, section { width: 100%; float: left; height: auto; } }
 
 html body .container section { position: relative; background-position: top center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; }
 
-html body .container #navigation { width: 100%; float: left; }
-html body .container #navigation h3 { display: none; }
-html body .container #navigation ul { display: block; margin: 0; }
-html body .container #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
-html body .container #navigation ul li.last, html body .container #navigation ul li:last-of-type { margin-right: 0; }
-html body .container #navigation ul li { cursor: pointer; }
+html body .container section { width: 80.902%; margin-left: 19.098%; }
+html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; }
+html body .container section article a { color: #3a3a3a; text-decoration: underline; }
+html body .container section #navigation { width: 100%; float: left; width: auto; position: fixed; bottom: 19.098%; z-index: 1; }
+html body .container section #navigation h3 { display: none; }
+html body .container section #navigation ul li { cursor: pointer; }
+html body .container section #navigation ul { display: block; margin: 0; }
+html body .container section #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
+html body .container section #navigation ul li.last, html body .container section #navigation ul li:last-of-type { margin-right: 0; }
+html body .container section #navigation ul li { background: #f9f9f9; color: #3a3a3a; border: 1px solid; cursor: pointer; text-transform: uppercase; font-weight: 400; letter-spacing: 0.15625em; padding: 1.25em; margin-right: 1.25em; -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae, 5px 4px #3a587f, 4px 5px #4171ae; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae, 5px 4px #3a587f, 4px 5px #4171ae; box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae, 5px 4px #3a587f, 4px 5px #4171ae; }
+html body .container section #navigation ul li:hover, html body .container section #navigation ul li:focus, html body .container section #navigation ul li.hover, html body .container section #navigation ul li.focus { transform: translate(2px, 2px); -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae; box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae, 3px 2px #3a587f, 2px 3px #4171ae, 4px 3px #3a587f, 3px 4px #4171ae; }
+html body .container section #navigation ul li:active, html body .container section #navigation ul li.active { transform: translate(4px, 4px); -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae; box-shadow: 1px 0px #3a587f, 0px 1px #4171ae, 2px 1px #3a587f, 1px 2px #4171ae; }
+@media only screen and (max-width: 766px) { html body .container section #navigation ul li { padding: 0.625em; margin: 0.3125em 0; letter-spacing: 1px; text-transform: none; display: block; } }
 html body .container section:nth-child(1) #header { margin-top: 19.098%; }
-html body .container section:nth-child(1) #header, html body .container section:nth-child(1) article, html body .container section:nth-child(1) #navigation { margin-left: 19.098%; width: auto; }
-html body .container section:nth-child(1) article { max-width: 43.75em; /* 700px; */ line-height: 1.75; font-size: large; padding-top: 2.5em; }
-html body .container section:nth-child(1) article a { color: #3a3a3a; text-decoration: underline; }
-html body .container section:nth-child(1) #navigation { margin-top: 19.098%; }
+html body .container section:nth-child(1) article { font-size: large; padding-top: 2.5em; }

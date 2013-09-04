@@ -3,32 +3,36 @@
 html {
   body {
     .container {
-      
-      #navigation {
-        @include navigation(inline);
-      }
-      
       section {
+        width: $major + $minor/2;
+        margin-left: $minor/2;
+        
+        article {
+          @include text(body);
+        }
+        
+        #navigation {
+          @include navigation(inline);
+          
+          position: fixed;
+          bottom: $minor/2;
+          z-index: 1;
+          
+        }
+        
         &:nth-child(1) {
           #header {
             margin-top: $minor/2;
           }
           
-          #header, article, #navigation {
-            margin-left: $minor/2;
-            width: auto;
-          }
-          
           article {
-            @include text(body);
             font-size: large;
-            
             padding-top: $pad*2;
           }
-          
-          #navigation {
-            margin-top: $minor/2;
-          }
+        }
+        
+        
+        &:nth-child(2) {
         }
       }
     }

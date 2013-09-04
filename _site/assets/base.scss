@@ -56,6 +56,7 @@ $margin: 5%; /* This varies from project to project */
     /* On non desktop displays slides are removed */
     /* If not the background image will scroll together with the content which gives sometimes a very cool effect */
     @include small-screen-and-below {
+      @include block;
       height: auto;
     }
   }
@@ -94,9 +95,10 @@ $background: #f9f9f9; /* The basic color in Kuler */
 $color: #3A3A3A;
 $pink: #FAAFAF;
 
-$gray-1: #DFDFDF;
-$gray-2: #B9B9B9;
-$gray-3: #797979;
+$gray-1: #f1f1f1;
+$gray-2: #DFDFDF;
+$gray-3: #B9B9B9;
+$gray-4: #797979;
 
 
 
@@ -113,9 +115,16 @@ $gray-3: #797979;
 
 @mixin navigation($type: normal) {
   @include block;
+  width: auto;
   
   h3 {
     display: none;
+  }
+  
+  ul {
+    li {
+      cursor: pointer;
+    }
   }
   
   @if $type == inline {
@@ -123,11 +132,12 @@ $gray-3: #797979;
       @include list-inline;
       
       li {
-        cursor: pointer;
+        @include button($color, $background);
       }
     }
   }
 }
+
 
 
 
@@ -163,6 +173,66 @@ $gray-3: #797979;
     &.last, &:last-of-type {
       margin-right: 0;
     }
+  }
+}
+
+
+
+@mixin shadow {
+  @include box-shadow(
+    1px 0px #3a587f, 0px 1px #4171ae,
+    2px 1px #3a587f, 1px 2px #4171ae,
+    3px 2px #3a587f, 2px 3px #4171ae,
+    4px 3px #3a587f, 3px 4px #4171ae,
+    5px 4px #3a587f, 4px 5px #4171ae
+  );
+  
+  &:hover, &:focus,
+  &.hover, &.focus {
+    transform: translate(2px, 2px);
+    @include box-shadow( 
+      1px 0px #3a587f, 0px 1px #4171ae,
+      2px 1px #3a587f, 1px 2px #4171ae,
+      3px 2px #3a587f, 2px 3px #4171ae,
+      4px 3px #3a587f, 3px 4px #4171ae
+    );
+  }
+  
+  &:active,
+  &.active {
+   	transform: translate(4px, 4px);
+    @include box-shadow( 
+      1px 0px #3a587f, 0px 1px #4171ae,
+      2px 1px #3a587f, 1px 2px #4171ae
+    );
+  }
+}
+
+
+@mixin button($background, $color) {
+  background: $color;        
+  color: $background; 
+  border: 1px solid;
+    
+  cursor: pointer; 
+    
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: $pad/8;
+  
+  padding: $pad;
+  margin-right: $pad;
+  
+  @include shadow;
+  
+  @include tablet-and-below {
+    padding: $pad/2;
+    margin: $pad/4 0;
+   
+    letter-spacing: 1px;
+    text-transform: none;
+    
+    display: block;
   }
 }
 
