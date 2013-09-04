@@ -99,7 +99,7 @@ body a { color: #3a3a3a; text-decoration: underline; }
 body a { color: #3a3a3a; text-decoration: none; }
 body .container { /* Headings ---------------------------------------------------------------------------
 */ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/ - They don't differ by size but decoration
-*/ /* Block level elements
+*/ /* In non body text context the padding between consecutive headings must be adjusted */ /* Block level elements
 // -------------------------------------------------------------------------
 */ /* the second <p> has a top margin */ /* blockquote is simply indented, enlarged */ /* address is small caps */ /* Lists
 // -----------------------------------------------
@@ -116,6 +116,8 @@ body .container h1, body .container h2, body .container h3 { font-size: 1.5em; p
 body .container h4, body .container h5, body .container h6 { font-size: 1.16667em; padding: 1.51785em 0; }
 body .container h1 { font-weight: 400; }
 body .container h3 { font-variant: small-caps; }
+body .container #header hgroup h1 { padding: 0; }
+body .container #header hgroup h1 + h2 { padding: 1.25em 0; }
 body .container p + p { margin-top: 1.25em; }
 body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 1px dotted; padding-left: 1.25em; font-style: italic; font-size: larger; }
 body .container address { font-variant: small-caps; }
@@ -158,5 +160,9 @@ html body .container #navigation h3 { display: none; }
 html body .container #navigation ul { display: block; margin: 0; }
 html body .container #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
 html body .container #navigation ul li.last, html body .container #navigation ul li:last-of-type { margin-right: 0; }
-html body .container section { max-width: 600px; line-height: 1.75; }
-html body .container section a { color: #3a3a3a; text-decoration: underline; }
+html body .container #navigation ul li { cursor: pointer; }
+html body .container section:nth-child(1) #header { margin-top: 19.098%; }
+html body .container section:nth-child(1) #header, html body .container section:nth-child(1) article, html body .container section:nth-child(1) #navigation { margin-left: 19.098%; width: auto; }
+html body .container section:nth-child(1) article { max-width: 43.75em; /* 700px; */ line-height: 1.75; font-size: large; padding-top: 2.5em; }
+html body .container section:nth-child(1) article a { color: #3a3a3a; text-decoration: underline; }
+html body .container section:nth-child(1) #navigation { margin-top: 19.098%; }

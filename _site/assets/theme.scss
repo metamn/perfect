@@ -9,7 +9,27 @@ html {
       }
       
       section {
-        @include text(body);
+        &:nth-child(1) {
+          #header {
+            margin-top: $minor/2;
+          }
+          
+          #header, article, #navigation {
+            margin-left: $minor/2;
+            width: auto;
+          }
+          
+          article {
+            @include text(body);
+            font-size: large;
+            
+            padding-top: $pad*2;
+          }
+          
+          #navigation {
+            margin-top: $minor/2;
+          }
+        }
       }
     }
   }

@@ -121,6 +121,10 @@ $gray-3: #797979;
   @if $type == inline {
     ul {
       @include list-inline;
+      
+      li {
+        cursor: pointer;
+      }
     }
   }
 }

@@ -43,7 +43,7 @@
 /* Long text like posts, with enhanced readability */
 @mixin text($type : body) {
   @if $type == body {
-    max-width: 600px;
+    max-width: 43.75em; /* 700px; */
     line-height: 1.75;
     
     @include link;
@@ -83,6 +83,19 @@ body {
     
     h3 {
       font-variant: small-caps;
+    }
+    
+    /* In non body text context the padding between consecutive headings must be adjusted */
+    #header {
+      hgroup {
+        h1 {
+          padding: 0;
+        }
+        
+        h1 + h2 {
+          padding: $pad 0;
+        }
+      }
     }
     
 
