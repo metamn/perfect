@@ -130,6 +130,7 @@ $gray-4: #797979;
   @if $type == inline {
     ul {
       @include list-inline;
+      @include menu;
       
       li {
         @include button($color, $background);
@@ -177,7 +178,7 @@ $gray-4: #797979;
 }
 
 
-
+/* Ads a shadow around an element which reacts on hover and when it is active */
 @mixin shadow {
   @include box-shadow(
     1px 0px #3a587f, 0px 1px #4171ae,
@@ -209,6 +210,7 @@ $gray-4: #797979;
 }
 
 
+/* Makes an element look like a button */
 @mixin button($background, $color) {
   background: $color;        
   color: $background; 
@@ -235,6 +237,13 @@ $gray-4: #797979;
     display: block;
   }
 }
+
+
+/* Makes navigation to behave like a menu */
+@mixin menu {
+  
+}
+
 
 
 

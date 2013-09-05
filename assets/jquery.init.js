@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // Scrolling between divs through navigation
+  // Navigation: scrolling to the section
   $('#navigation li').click(function() {
     var index = $(this).index() + 2;
     
@@ -10,8 +10,17 @@ $(document).ready(function() {
     $('#navigation li').removeClass('active');
     $(this).addClass('active');
     
+    menu();
+    
     return false;
   });
+  
+  
+  // Menu: active item is visible; the others hidden
+  // - it behaves like a menu on mobiles and smartphones
+  function menu() {
+    
+  }
   
 
   // Scrolling to a div
