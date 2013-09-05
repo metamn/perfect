@@ -110,7 +110,7 @@ $gray-4: #797979;
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
-- It is animated by jQuery; Only the active item is shown, the rest is hidden
+- It is animated by jQuery; On click it will be replaced by a menu symbol
 
 */
 
@@ -118,7 +118,7 @@ $gray-4: #797979;
   @include block;
   width: auto;
   
-  h3 {
+  h3, div {
     display: none;
   }
   
@@ -128,16 +128,38 @@ $gray-4: #797979;
     }
   }
   
-  &.active {
-    position: fixed;
-    bottom: $minor/2;
-    z-index: 1;
+  div {
+    @include circle($pad*2);
+    color: $background;
+    background: $gray-1;
+    cursor: pointer;
     
-    /* The active menu item is pulled left with jQuery. This makes left margin smaller than default on small screens */
-    @include tablet-and-below {
+    span {
+      position: relative;
+      top: $pad/2;
+    }
+  }
+  
+  /* Toggle menu items visibility */
+  &.active {
+    @include mobile {
       left: $pad/4 !important;
     }
     
+    ul {
+      display: none;
+    }
+    
+    div {
+      display: block;
+    }
+  }
+  
+  /* Fix menu at first click */
+  &.activated {
+    position: fixed;
+    bottom: $minor/2;
+    z-index: 1;
   }
   
   
@@ -147,10 +169,6 @@ $gray-4: #797979;
       
       li {
         @include button($color, $background);
-        
-        &.active {
-          @include button($gray-2, $background, $gray-2);
-        }
       }
     }
   }
@@ -238,6 +256,7 @@ $gray-4: #797979;
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: $pad/8;
+  font-size: smaller;
   
   padding: $pad;
   margin-right: $pad;
@@ -253,10 +272,16 @@ $gray-4: #797979;
     
     display: block;
   }
+}
+
+
+/* Creates a circle */
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  @include border-radius($size);
   
-  @include mobile {
-    font-size: smaller;
-  }
+  text-align: center;
 }
 
 

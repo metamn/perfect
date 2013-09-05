@@ -1,16 +1,13 @@
 $(document).ready(function() {
 
-
-
-  
-
   // Navigation: click
   $('#navigation li').click(function() {
-    if ($(this).hasClass('active')) {
-      menuShow();
-    } else {
-      menuScroll($(this));
-    }
+    menuScroll($(this));
+  });
+  
+  // Navigation: menu symbol click
+  $('#navigation div').click(function() {
+    menuShow();
   });
   
   
@@ -29,26 +26,18 @@ $(document).ready(function() {
   
   // Navigation: Show all menu items
   function menuShow() {
-    $('#navigation li').show('slow');
+    $('#navigation').removeClass('active');
   }
   
-  // Navigation: Make the active item visible; hide all others
-  // The menu is pulled left to let the content be fully visible
+  // Navigation: Pull menu off to left
   function menuHide() {
-  
-    // Move out to left
     $('#navigation').addClass('active');
+    $('#navigation').addClass('activated');
+    
     $('#navigation').animate( {
       left: '1.25em'
     }, 'slow', function() {
       // Animation complete.
-    });
-    
-    // Hide non-active items
-    $('#navigation li').each(function() {
-      if (!($(this).hasClass('active'))) {
-        $(this).hide('slow');
-      }
     });
   }
   

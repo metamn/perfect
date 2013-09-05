@@ -42,7 +42,7 @@
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
-- It is animated by jQuery; Only the active item is shown, the rest is hidden
+- It is animated by jQuery; On click it will be replaced by a menu symbol
 
 */
 /* Common elements and mixins
@@ -52,3 +52,4 @@
 */
 /* Ads a shadow around an element which reacts on hover and when it is active */
 /* Makes an element look like a button */
+/* Creates a circle */

@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
-- It is animated by jQuery; Only the active item is shown, the rest is hidden
+- It is animated by jQuery; On click it will be replaced by a menu symbol
 
 */
 /* Common elements and mixins
@@ -84,6 +84,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 */
 /* Ads a shadow around an element which reacts on hover and when it is active */
 /* Makes an element look like a button */
+/* Creates a circle */
 /* Typography.scss
 ================================================================================
 
@@ -161,24 +162,21 @@ html body .container section { position: relative; background-position: top cent
 html body .container section { width: 80.902%; margin-left: 19.098%; }
 html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; }
 html body .container section article a { color: #3a3a3a; text-decoration: underline; }
-html body .container section #navigation { width: 100%; float: left; width: auto; }
-html body .container section #navigation h3 { display: none; }
+html body .container section #navigation { width: 100%; float: left; width: auto; /* Toggle menu items visibility */ /* Fix menu at first click */ }
+html body .container section #navigation h3, html body .container section #navigation div { display: none; }
 html body .container section #navigation ul li { cursor: pointer; }
-html body .container section #navigation.active { position: fixed; bottom: 19.098%; z-index: 1; /* The active menu item is pulled left with jQuery. This makes left margin smaller than default on small screens */ }
-@media only screen and (max-width: 766px) { html body .container section #navigation.active { left: 0.3125em !important; } }
+html body .container section #navigation div { width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #f1f1f1; cursor: pointer; }
+html body .container section #navigation div span { position: relative; top: 0.625em; }
+@media (max-width: 380px) { html body .container section #navigation.active { left: 0.3125em !important; } }
+html body .container section #navigation.active ul { display: none; }
+html body .container section #navigation.active div { display: block; }
+html body .container section #navigation.activated { position: fixed; bottom: 19.098%; z-index: 1; }
 html body .container section #navigation ul { display: block; margin: 0; }
 html body .container section #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
 html body .container section #navigation ul li.last, html body .container section #navigation ul li:last-of-type { margin-right: 0; }
-html body .container section #navigation ul li { color: #3a3a3a; background: #f9f9f9; border: 1px solid; cursor: pointer; text-transform: uppercase; font-weight: 400; letter-spacing: 0.15625em; padding: 1.25em; margin-right: 1.25em; -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; }
+html body .container section #navigation ul li { color: #3a3a3a; background: #f9f9f9; border: 1px solid; cursor: pointer; text-transform: uppercase; font-weight: 400; letter-spacing: 0.15625em; font-size: smaller; padding: 1.25em; margin-right: 1.25em; -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9, 5px 4px #3a587f, 4px 5px #668ab9; }
 html body .container section #navigation ul li:hover, html body .container section #navigation ul li:focus, html body .container section #navigation ul li.hover, html body .container section #navigation ul li.focus { transform: translate(2px, 2px); -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9; box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9, 3px 2px #3a587f, 2px 3px #668ab9, 4px 3px #3a587f, 3px 4px #668ab9; }
 html body .container section #navigation ul li:active, html body .container section #navigation ul li.active { transform: translate(4px, 4px); -webkit-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9; -moz-box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9; box-shadow: 1px 0px #3a587f, 0px 1px #668ab9, 2px 1px #3a587f, 1px 2px #668ab9; }
 @media only screen and (max-width: 1023px) { html body .container section #navigation ul li { padding: 0.625em; margin: 0.3125em 0; letter-spacing: 1px; text-transform: none; display: block; } }
-@media (max-width: 380px) { html body .container section #navigation ul li { font-size: smaller; } }
-html body .container section #navigation ul li.active { color: #dfdfdf; background: #f9f9f9; border: 1px solid; cursor: pointer; text-transform: uppercase; font-weight: 400; letter-spacing: 0.15625em; padding: 1.25em; margin-right: 1.25em; -webkit-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white, 5px 4px #dfdfdf, 4px 5px white; -moz-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white, 5px 4px #dfdfdf, 4px 5px white; box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white, 5px 4px #dfdfdf, 4px 5px white; }
-html body .container section #navigation ul li.active:hover, html body .container section #navigation ul li.active:focus, html body .container section #navigation ul li.active.hover, html body .container section #navigation ul li.active.focus { transform: translate(2px, 2px); -webkit-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white; -moz-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white; box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white, 3px 2px #dfdfdf, 2px 3px white, 4px 3px #dfdfdf, 3px 4px white; }
-html body .container section #navigation ul li.active:active, html body .container section #navigation ul li.active.active { transform: translate(4px, 4px); -webkit-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white; -moz-box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white; box-shadow: 1px 0px #dfdfdf, 0px 1px white, 2px 1px #dfdfdf, 1px 2px white; }
-@media only screen and (max-width: 1023px) { html body .container section #navigation ul li.active { padding: 0.625em; margin: 0.3125em 0; letter-spacing: 1px; text-transform: none; display: block; } }
-@media (max-width: 380px) { html body .container section #navigation ul li.active { font-size: smaller; } }
-@media only screen and (max-width: 766px) { html body .container section #navigation.active { max-width: 14.098%; overflow: hidden; } }
 html body .container section:nth-child(1) #header { margin-top: 19.098%; }
 html body .container section:nth-child(1) article { font-size: large; padding: 2.5em 0; }
