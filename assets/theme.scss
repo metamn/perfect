@@ -14,9 +14,13 @@ html {
         #navigation {
           @include navigation(inline);
           
-          position: fixed;
-          bottom: $minor/2;
-          z-index: 1;
+          @include tablet-and-below {
+             &.active {
+              max-width: $minor/2 - 5%;
+              overflow: hidden;
+            }
+          }
+         
         }
         
         &:nth-child(1) {
@@ -26,7 +30,7 @@ html {
           
           article {
             font-size: large;
-            padding-top: $pad*2;
+            padding: $pad*2 0;
           }
         }
         

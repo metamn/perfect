@@ -110,6 +110,7 @@ $gray-4: #797979;
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
+- It is animated by jQuery; Only the active item is shown, the rest is hidden
 
 */
 
@@ -127,6 +128,18 @@ $gray-4: #797979;
     }
   }
   
+  &.active {
+    position: fixed;
+    bottom: $minor/2;
+    z-index: 1;
+    
+    /* The active menu item is pulled left with jQuery. This makes left margin smaller than default on small screens */
+    @include tablet-and-below {
+      left: $pad/4 !important;
+    }
+    
+  }
+  
   
   @if $type == inline {
     ul {
@@ -134,6 +147,10 @@ $gray-4: #797979;
       
       li {
         @include button($color, $background);
+        
+        &.active {
+          @include button($gray-2, $background, $gray-2);
+        }
       }
     }
   }
@@ -179,23 +196,23 @@ $gray-4: #797979;
 
 
 /* Ads a shadow around an element which reacts on hover and when it is active */
-@mixin shadow {
+@mixin shadow($color : #3a587f) {
   @include box-shadow(
-    1px 0px #3a587f, 0px 1px #4171ae,
-    2px 1px #3a587f, 1px 2px #4171ae,
-    3px 2px #3a587f, 2px 3px #4171ae,
-    4px 3px #3a587f, 3px 4px #4171ae,
-    5px 4px #3a587f, 4px 5px #4171ae
+    1px 0px $color, 0px 1px lighten($color, 20%),
+    2px 1px $color, 1px 2px lighten($color, 20%),
+    3px 2px $color, 2px 3px lighten($color, 20%),
+    4px 3px $color, 3px 4px lighten($color, 20%),
+    5px 4px $color, 4px 5px lighten($color, 20%)
   );
   
   &:hover, &:focus,
   &.hover, &.focus {
     transform: translate(2px, 2px);
     @include box-shadow( 
-      1px 0px #3a587f, 0px 1px #4171ae,
-      2px 1px #3a587f, 1px 2px #4171ae,
-      3px 2px #3a587f, 2px 3px #4171ae,
-      4px 3px #3a587f, 3px 4px #4171ae
+      1px 0px $color, 0px 1px lighten($color, 20%),
+      2px 1px $color, 1px 2px lighten($color, 20%),
+      3px 2px $color, 2px 3px lighten($color, 20%),
+      4px 3px $color, 3px 4px lighten($color, 20%)
     );
   }
   
@@ -203,17 +220,17 @@ $gray-4: #797979;
   &.active {
    	transform: translate(4px, 4px);
     @include box-shadow( 
-      1px 0px #3a587f, 0px 1px #4171ae,
-      2px 1px #3a587f, 1px 2px #4171ae
+      1px 0px $color, 0px 1px lighten($color, 20%),
+      2px 1px $color, 1px 2px lighten($color, 20%)
     );
   }
 }
 
 
 /* Makes an element look like a button */
-@mixin button($background, $color) {
-  background: $color;        
-  color: $background; 
+@mixin button($color, $background, $shadow : #3a587f) {
+  color: $color; 
+  background: $background;        
   border: 1px solid;
     
   cursor: pointer; 
@@ -225,9 +242,9 @@ $gray-4: #797979;
   padding: $pad;
   margin-right: $pad;
   
-  @include shadow;
+  @include shadow($shadow);
   
-  @include tablet-and-below {
+  @include small-screen-and-below {
     padding: $pad/2;
     margin: $pad/4 0;
    
@@ -236,14 +253,11 @@ $gray-4: #797979;
     
     display: block;
   }
-}
-
-
-/* Makes navigation to behave like a menu */
-@mixin menu {
   
+  @include mobile {
+    font-size: smaller;
+  }
 }
-
 
 
 
