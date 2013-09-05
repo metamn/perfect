@@ -127,10 +127,10 @@ $gray-4: #797979;
     }
   }
   
+  
   @if $type == inline {
     ul {
       @include list-inline;
-      @include menu;
       
       li {
         @include button($color, $background);
