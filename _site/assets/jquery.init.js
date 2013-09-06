@@ -42,6 +42,9 @@ $(document).ready(function() {
   
   
   
+  // jQuery Typer
+  $('[data-typer-targets]').typer();
+  
 
   // Scrolling to a div
   function scrollTo(div) {
