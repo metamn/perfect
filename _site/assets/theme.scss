@@ -13,6 +13,10 @@ html {
         
         #navigation {
           @include navigation(inline);
+          
+          &:nth-of-type(2) {
+            @include menu;
+          }
         }
         
         &:nth-child(1) {
@@ -24,6 +28,7 @@ html {
             font-size: large;
             padding: $pad*2 0;
           }
+          
         }
         
         

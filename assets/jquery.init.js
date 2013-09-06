@@ -1,44 +1,43 @@
 $(document).ready(function() {
 
-  // Navigation: click
+  
+  // Navigation, Menu: click
   $('#navigation li').click(function() {
-    menuScroll($(this));
+    scroll($(this));
+    var nav = $(this).parent().parent();
+    
+    if (nav.hasClass('menu')) {
+      menuHide(nav);
+    }
   });
-  
-  // Navigation: menu symbol click
-  $('#navigation div').click(function() {
-    menuShow();
-  });
-  
   
   // Navigation: Scroll to the active section
-  function menuScroll(item) {
+  function scroll(item) {
     var index = item.index() + 2;
       
     var slide = $('section:nth-child(' + index + ')');
     scrollTo(slide);
     
+    /* instead of item.siblings() we use $('#navigation li') to remove all highlights if there are more than one navigations on the page */
+    /* otherwise the two or more navigations will have differently highlighted items which is confusing */
     $('#navigation li').removeClass('active');
     item.addClass('active');
-    menuHide();
   }
   
   
-  // Navigation: Show all menu items
-  function menuShow() {
-    $('#navigation').removeClass('active');
+  // Menu: symbol click
+  $('#navigation.menu div').click(function() {
+    menuShow($(this));
+  });
+  
+  // Menu: Show all menu items
+  function menuShow(item) {
+    item.parent().addClass('active');
   }
   
-  // Navigation: Pull menu off to left
-  function menuHide() {
-    $('#navigation').addClass('active');
-    $('#navigation').addClass('activated');
-    
-    $('#navigation').animate( {
-      left: '1.25em'
-    }, 'slow', function() {
-      // Animation complete.
-    });
+  // Menu: Hide menu items
+  function menuHide(item) {
+    item.removeClass('active');
   }
   
   
