@@ -45,8 +45,7 @@
 
   
   <article>
-    <p data-typer-targets='{ "targets" : ["Showcasing common design elements re-used accross my projects","Showcasing common design decisions re-used accross my projects","Showcasing common design techniques re-used accross my projects"]}'>
-    </p>
+    
   </article>
   
   
@@ -54,8 +53,8 @@
   <h3>Navigation</h3>
   <ul>
     <li>Message</li>
-    <li>Layout</li>
-    <li>Style</li>
+    <li>Attention</li>
+    <li>Story</li>
     <li>Code</li>
   </ul>
   <div><span>&#9776;</span></div> <!-- The menu symbol -->
@@ -65,8 +64,8 @@
   <h3>Navigation</h3>
   <ul>
     <li>Message</li>
-    <li>Layout</li>
-    <li>Style</li>
+    <li>Attention</li>
+    <li>Story</li>
     <li>Code</li>
   </ul>
   <div><span>&#9776;</span></div> <!-- The menu symbol -->
@@ -80,142 +79,93 @@
   </header>
 
   <article>
-    <p>This is a normal paragraph (<code>p</code> element).
-    To add some length to it, let us mention that this page was
-    primarily written for testing the effect of <strong>user style sheets</strong>.
-    You can use it for various other purposes as well, like just checking how
-    your browser displays various HTML elements by default.
-    It can also be useful when testing conversions from HTML
-    format to other formats, since some elements can go wrong then.</p> 
-    <p>This is another paragraph. I think it needs to be added that
-    the set of elements tested is not exhaustive in any sense. I have selected
-    those elements for which it can make sense to write user style sheet rules,
-    in my opionion.</p>
-    <div>This is a <code>div</code> element. Authors may use such elements instead
-    of paragraph markup for various reasons. (End of <code>div</code>.)</div>
-    <blockquote><p>This is a block quotation containing a single
-    paragraph. Well, not quite, since this is not <em>really</em>
-    quoted text, but I hope you understand the point. After all, this
-    page does not use HTML markup very normally anyway.</p></blockquote>
-    <p>The following contains address information about the author, in an <code>address</code>
-    element.</p>
-    <address>
-    <a href="../personal.html" lang="fi" hreflang="en">Jukka Korpela</a>,
-    <a href="mailto:jkorpela@cs.tut.fi">jkorpela@cs.tut.fi</A><br>
-    Päivänsäteenkuja 4 A, Espoo, Finland
-    </address>
-  </article>
-</section>
-
-
-<section>
-  <header>
-    <h1>Layout</h1>
-  </header>
-
-  <article>
-    <p>This is a paragraph before an <strong>unnumbered</strong> list (<code>ul</code>). Note that
-    the spacing between a paragraph and a list before or after that is hard
-    to tune in a user style sheet. You can't guess which paragraphs are
-    logically related to a list, e.g. as a "list header".</p>
-    <ul>
-      <li> One.
-      <li> Two.
-      <li> Three. Well, probably this list item should be longer. Note that
-    for short items lists look better if they are compactly presented,
-           whereas for long items, it would be better to have more vertical spacing between items.
-      <li> Four. This is the last item in this list.
-           Let us terminate the list now without making any more fuss about it.
-    </ul>
-
-
-    <p>This is a paragraph before a <strong>numbered</strong> list (<code>ol</code>). Note that
-    the spacing between a paragraph and a list before or after that is hard
-    to tune in a user style sheet. You can't guess which paragraphs are
-    logically related to a list, e.g. as a "list header".</p>
+    <p>
+      Design is about the message. Every website sells something, tells a story, delivers a message.
+    </p>
     <ol>
-      <li> One.
-      <li> Two.
-      <li> Three. Well, probably this list item should be longer. Note that if
-    items are short, lists look better if they are compactly presented,
-           whereas for long items, it would be better to have more vertical spacing between items.
-      <li> Four. This is the last item in this list.
-           Let us terminate the list now without making any more fuss about it.
+      <li>What do you sell?</li>
+      <li>How these items look and feel?</li>
+      <li>How people will feel about?</li>
     </ol>
-
-    <p>This is a paragraph before a <strong>definition</strong> list (<code>dl</code>).
-    In principle, such a list should consist of <em>terms</em> and associated 
-    definitions.
-    But many authors use <code>dl</code> elements for fancy "layout" things. Usually the
-    effect is not <em>too</em> bad, if you design user style sheet rules for <code>dl</code>
-    which are suitable
-    for real definition lists.
-    <dl>
-      <dt> recursion
-      <dd> see recursion
-      <dt> recursion, indirect
-      <dd> see indirect recursion
-      <dt> indirect recursion
-      <dd> see recursion, indirect
-      <dt> term
-      <dd> a word or other expression taken into specific use in
-           a well-defined meaning, which is often defined rather rigorously, even
-           formally, and may differ quite a lot from an everyday meaning
-    </dl>
+     <p>
+      Good design starts with answering these questions.
+    </p>
   </article>
 </section>
 
 
 <section>
   <header>
-    <h1>Style</h1>
+    <h1>Attention</h1>
   </header>
 
   <article>
-    <form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi">
-    <div>
-    <input type="hidden" name="hidden field" value="42">
-    This is a form containing various fields (with some initial
-    values (defaults) set, so that you can see how input text looks
-    like without actually typing it):</div>
-    <div><label for="but">Button:
-    <button id="but" type="submit" name="foo" value="bar">A cool<br>button</button></label></div>
-    <div><label for="f0">Reset button:
-    <input id="f0" type="reset" name="reset" value="Reset"></label></div>
-    <div><label for="f1">Single-line text input field: <input id="f1" name="text" size="20" value="Default text."></label></div>
-    <div><label for="f2">Multi-line text input field (textarea):</label><br>
-    <textarea id="f2" name="textarea" rows="2" cols="20">
-    Default text.
-    </textarea></div>
-    <div>The following two radio buttons are inside
-    a <code>fieldset</code> element with a <code>legend</code>:</div>
-    <fieldset>
-    <legend>Legend</legend>
-    <div><label for="f3"><input id="f3" type="radio" name="radio" value="1"> Radio button 1</label></div>
-    <div><label for="f4"><input id="f4" type="radio" name="radio" value="2" checked> Radio button 2 (initially checked)</label></div>
-    </fieldset>
-    <fieldset>
-    <legend>Check those that apply</legend>
-    <div><label for="f5"><input id="f5" type="checkbox" name="checkbox"> Checkbox 1</label></div>
-    <div><label for="f6"><input id="f6" type="checkbox" name="checkbox2" checked> Checkbox 2 (initially checked)</label></div>
-    </fieldset>
-    <div><label for="f10">A <code>select</code> element with <code>size="1"</code>
-    (dropdown box):
-    <select id="f10" name="select1" size="1">
-    <option>one
-    <option selected>two (default)
-    <option>three
-    </select></label></div>
-    <div><label for="f11">A <code>select</code> element with <code>size="3"</code>
-    (listbox):</label><br>
-    <select id="f11" name="select2" size="3">
-    <option>one
-    <option selected>two (default)
-    <option>three
-    </select></div>
-    <div><label for="f99">Submit button:
-    <input id="f99" type="submit" name="submit" value="Just a test"></label></div>
-    </form>
+    <p>
+      Jakob Nielsen, one of the most important usability experts 
+      narrows down perfectly in <a href="http://www.nngroup.com/articles/113-design-guidelines-homepage-usability/">Design Guidelines for Homepage Usability</a>:
+      
+      <q>
+        Visitors can focus only on 5 things on a single page.
+      </q>
+    </p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th colspan=2>Focus point</th>
+          <th>Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Identity</td>
+          <td>Makes the visitor feeling safe, being in the right place</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Offer</td>
+          <td>What this page offers</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Values</td>
+          <td>Emphasize what your site does that's valuable from the user's point of view, as well as how you differ from key competitors.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Action
+          </td><td>Emphasize the highest priority tasks so that users have a clear starting point for what to do next.</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Entertainment</td>
+          <td>If all above are not interesting for the user make it feel good by offering something fun which still connects / links back to your site.</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>
+      Good design is built around these focus points. And deconstructs longer pages into single screen slides to fit this rule.
+    </p>
+    
+  </article>
+</section>
+
+
+<section>
+  <header>
+    <h1>Story</h1>
+  </header>
+
+  <article>
+    <p>
+      You have a message and a framework to deliver. Now you'll tell a story featuring HTML, CSS and Javascript.
+    </p>
+    <p>
+      Just like in movies you define characters &mdash; logo, type, buttons, images, navigation, copy &mdash; and let them play the script.
+    </p>
+    <p>You employ the rules of drama since Athens ... and bang! That way creation follows is universal.</p>
   </article>
 </section>
 

@@ -99,8 +99,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* The single styling is the default underline */
 /* Long text like posts, with enhanced readability */
 body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; font-weight: 300; }
-body a { color: #3a3a3a; text-decoration: underline; }
-body a { color: #3a3a3a; text-decoration: none; }
+body td { font-weight: 300; }
+body a { color: #3a3a3a; text-decoration: none; border-bottom: 1px dotted; }
+body a { color: #3a3a3a; border-bottom: none; }
 body .container { /* Headings ---------------------------------------------------------------------------
 */ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/ - They don't differ by size but decoration
 */ /* In non body text context the padding between consecutive headings must be adjusted */ /* Block level elements
@@ -132,10 +133,9 @@ body .container dl dt { font-weight: bold; text-transform: uppercase; margin: 1.
 body .container dl dd { margin: 0.3125em; margin-bottom: 0.625em; }
 body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
-body .container table thead tr td { font-weight: bold; }
 body .container table tbody { border-top: 1px dotted; border-bottom: 1px dotted; }
-body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 1.25em; }
-body .container table td { border-bottom: 1px solid; }
+body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 0.625em; }
+body .container table td { border-bottom: 1px dotted; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
 body .container input, body .container textarea, body .container select { border: none; outline: 0; background: #f9f9f9; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
@@ -160,8 +160,8 @@ html, body, .container, #content, section { height: 100%; /* On non desktop disp
 html body .container section { position: relative; background-position: top center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; }
 
 html body .container section { width: 80.902%; margin-left: 19.098%; }
-html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; }
-html body .container section article a { color: #3a3a3a; text-decoration: underline; }
+html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; font-size: larger; }
+html body .container section article a { color: #3a3a3a; text-decoration: none; border-bottom: 1px dotted; }
 html body .container section #navigation { width: 100%; float: left; width: auto; }
 html body .container section #navigation h3, html body .container section #navigation div { display: none; }
 html body .container section #navigation ul li { cursor: pointer; }

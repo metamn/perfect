@@ -21,6 +21,10 @@
 @mixin font {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  
+  td {
+    font-weight: 300;
+  }
 }
 
 
@@ -28,13 +32,14 @@
 @mixin link($type : normal) {
   a {
     color: $color;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px dotted;
   }
   
   @if $type == none {
     a {
       color: $color;
-      text-decoration: none;
+      border-bottom: none;
     }
   }
 }
@@ -45,6 +50,7 @@
   @if $type == body {
     max-width: 43.75em; /* 700px; */
     line-height: 1.75;
+    font-size: larger;
     
     @include link;
   }
@@ -167,14 +173,6 @@ body {
     table {
 	    margin: $pad 0 $pad*2;
 	
-	    thead {
-		    tr {
-			    td {
-				    font-weight: bold;
-			    }
-		    }
-	    }
-	
 	    tbody {
 		    border-top: 1px dotted;
 		    border-bottom: 1px dotted;
@@ -183,11 +181,11 @@ body {
 	    td, th, tr {
   			text-align: left;
   			vertical-align: top;
-  			padding: $pad;
+  			padding: $pad/2;
 	    }
 	
 	    td {
-	      border-bottom: 1px solid;
+	      border-bottom: 1px dotted;
 	    }
     }
     
