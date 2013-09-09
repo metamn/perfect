@@ -132,8 +132,7 @@ body .container ol { list-style: none; margin-left: 0; counter-reset: ol-counter
 body .container ol li { counter-increment: ol-counter; margin-bottom: 0.625em; }
 body .container ol li:before { content: counter(ol-counter,decimal); border: 2px solid; width: 1.25em; height: 1.25em; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; text-align: center; padding: 0 0.3125em 0.625em; display: inline-block; margin-right: 0.625em; }
 body .container dl { margin: 1.25em 0; }
-body .container dl dt { font-weight: bold; text-transform: uppercase; margin: 1.25em 0; }
-body .container dl dd { margin: 0.3125em; margin-bottom: 0.625em; }
+body .container dl dt { font-weight: bold; text-transform: uppercase; }
 body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
 body .container table tbody { border-top: 2px solid; border-bottom: 2px solid; }
