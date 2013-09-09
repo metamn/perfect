@@ -98,6 +98,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* One font with rich variants */
 /* The single styling is the default underline */
 /* Long text like posts, with enhanced readability */
+/* Invert colors */
 body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; font-weight: 300; }
 body td { font-weight: 300; }
 body ol li:before { font-weight: 400; }
@@ -125,7 +126,7 @@ body .container h3 { font-variant: small-caps; }
 body .container #header hgroup h1 { padding: 0; }
 body .container #header hgroup h1 + h2 { padding: 1.25em 0; }
 body .container p + p { margin-top: 1.25em; }
-body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 1px dotted; padding-left: 1.25em; font-style: italic; font-size: larger; }
+body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 2px solid; padding: 1.25em; font-size: larger; font-style: italic; }
 body .container address { font-variant: small-caps; }
 body .container ul, body .container menu, body .container dir, body .container ol { margin: 1.25em; list-style: circle; }
 body .container ol { list-style: none; margin-left: 0; counter-reset: ol-counter; }
@@ -136,9 +137,9 @@ body .container dl dt { font-weight: bold; text-transform: uppercase; margin: 1.
 body .container dl dd { margin: 0.3125em; margin-bottom: 0.625em; }
 body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
-body .container table tbody { border-top: 1px dotted; border-bottom: 1px dotted; }
+body .container table tbody { border-top: 2px solid; border-bottom: 2px solid; }
 body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 0.625em; }
-body .container table td { border-bottom: 1px dotted; }
+body .container table td { border-bottom: 2px solid; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
 body .container input, body .container textarea, body .container select { border: none; outline: 0; background: #f9f9f9; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
