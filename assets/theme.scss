@@ -20,6 +20,11 @@ html {
           }
         }
         
+        #arrows {
+          @include arrows(inline);
+          margin-top: $pad*5;
+        }
+        
         &:nth-child(1) {
           #header {
             margin-top: $minor;

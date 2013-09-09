@@ -17,6 +17,7 @@
 /* The basic metric for positioning. It is the golden ratio
 */
 /* This varies from project to project */
+/* 700px, for the holder of long texts */
 /* The Grid
 --------------------------------------------------------------------------------
 
@@ -56,6 +57,8 @@
 */
 /* Transforms a navigation list into a menu  - the navigation must have the '.menu' class to make jQuery work
 */
+/* Two arrows to help navigation */
+/* Left or right arrows to help navigation */
 /* Common elements and mixins
 --------------------------------------------------------------------------------
 */

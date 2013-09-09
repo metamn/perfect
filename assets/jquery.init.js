@@ -32,6 +32,23 @@ $(document).ready(function() {
   }
   
   
+  // Arrow click
+  $('#arrows li').click(function() {
+    var direction = $(this).index();
+    var parent = $(this).parent().parent().parent();
+    var index = parent.index();
+    
+    if (direction == 0) {
+      var slide = (index == 1) ? '' : $('section:nth-child(' + index + ')');
+      scrollTo(slide);
+    } else {
+      index += 2;
+      var slide = $('section:nth-child(' + index + ')');
+      scrollTo(slide);
+    }
+  });
+  
+  
   // Navigation: Scroll to the active section
   function scroll(item) {
     var index = item.index() + 1;

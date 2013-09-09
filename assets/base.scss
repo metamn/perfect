@@ -30,7 +30,7 @@ $pad: 1.25em;
 $minor: 38.196%;
 $major: 61.804%;
 $margin: 5%; /* This varies from project to project */
-
+$body: 43.75em; /* 700px, for the holder of long texts */
 
 
 
@@ -197,7 +197,7 @@ $gray-4: #797979;
     left: $pad/4;
   }
   
-    
+  /* The menu button */  
   div {
     display: block;
     
@@ -212,6 +212,7 @@ $gray-4: #797979;
     }
   }
   
+  /* The menu items */
   ul {
     display: none;
     
@@ -219,7 +220,6 @@ $gray-4: #797979;
       /* Show home button */
       &:first-of-type {
         display: block;
-       
       }
     }
   }
@@ -234,7 +234,45 @@ $gray-4: #797979;
       display: none;
     }
   }
+}
+
+
+/* Two arrows to help navigation */
+@mixin arrows($type : normal) {
+  @include navigation($type);
   
+  ul {
+    li {
+      span {
+        &:after {
+          @include arrow();
+        }
+      }
+      
+      &:nth-of-type(1) {
+        display: block;
+        
+        span {
+          &:after {
+            @include arrow(left);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Left or right arrows to help navigation */
+@mixin arrow($orientation : right) {
+  content: '\2794';
+  display: inline-block;
+  
+  @if ($orientation == left) {
+    @include transform(rotate(180deg));
+    position: relative;
+    top: $pad/8;
+  }
 }
 
 

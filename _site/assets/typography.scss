@@ -43,7 +43,7 @@
 /* Long text like posts, with enhanced readability */
 @mixin text($type : body) {
   @if $type == body {
-    max-width: 43.75em; /* 700px; */
+    max-width: $body;
     line-height: 1.75;
     font-size: larger;
     
