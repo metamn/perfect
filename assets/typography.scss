@@ -17,13 +17,21 @@
 
 
 
-/* One fonmt with rich variants where possible */
+/* One font with rich variants */
 @mixin font {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   
   td {
     font-weight: 300;
+  }
+  
+  ol {
+    li {
+      &:before {
+        font-weight: 400;
+      }
+    }
   }
 }
 
@@ -138,11 +146,33 @@ body {
 
     ul, menu, dir, ol {
 	    margin: $pad;
-	    list-style-type: square;
+	    list-style: circle;
     }
 
+    /* List counter will be hand styled */
     ol {
-	    list-style-type: decimal;
+	    list-style: none;
+	    margin-left: 0;
+	    counter-reset: ol-counter;
+	    
+	    li {
+	      counter-increment: ol-counter;
+	      margin-bottom: $pad/2;
+	      
+	      &:before {
+	        content: counter(ol-counter, decimal);
+	        
+	        border: 2px solid;
+	        @include border-radius($pad);
+	        padding: 0 $pad/4 $pad/2;
+	        text-align: center;
+	        width: $pad;
+	        height: $pad;
+	        display: inline-block;
+	        
+	        margin-right: $pad/2;
+	      }
+	    }
     }
 
     dl {

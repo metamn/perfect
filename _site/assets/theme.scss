@@ -28,11 +28,6 @@ html {
           article {
             font-size: large;
             padding: $pad*2 0;
-            
-            p {
-              /* Typer.js needs this in order to avoid flipping the rest of the content */
-              height: $pad*3;
-            }
           }
           
         }
