@@ -157,11 +157,9 @@ body {
 	        content: counter(ol-counter, decimal);
 	        
 	        border: 2px solid;
-	        @include border-radius($pad);
+	        @include circle($pad);
+	        
 	        padding: 0 $pad/4 $pad/2;
-	        text-align: center;
-	        width: $pad;
-	        height: $pad;
 	        display: inline-block;
 	        
 	        margin-right: $pad/2;

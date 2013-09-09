@@ -129,7 +129,7 @@ body .container address { font-variant: small-caps; }
 body .container ul, body .container menu, body .container dir, body .container ol { margin: 1.25em; list-style: circle; }
 body .container ol { list-style: none; margin-left: 0; counter-reset: ol-counter; }
 body .container ol li { counter-increment: ol-counter; margin-bottom: 0.625em; }
-body .container ol li:before { content: counter(ol-counter,decimal); border: 2px solid; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; padding: 0 0.3125em 0.625em; text-align: center; width: 1.25em; height: 1.25em; display: inline-block; margin-right: 0.625em; }
+body .container ol li:before { content: counter(ol-counter,decimal); border: 2px solid; width: 1.25em; height: 1.25em; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; text-align: center; padding: 0 0.3125em 0.625em; display: inline-block; margin-right: 0.625em; }
 body .container dl { margin: 1.25em 0; }
 body .container dl dt { font-weight: bold; text-transform: uppercase; margin: 1.25em 0; }
 body .container dl dd { margin: 0.3125em; margin-bottom: 0.625em; }
@@ -178,7 +178,7 @@ html body .container section #navigation ul li:hover, html body .container secti
 @media only screen and (max-width: 766px) { html body .container section #navigation ul li { padding: 0.3125em 1.25em; } }
 html body .container section #navigation:nth-of-type(2) { position: fixed; top: 1.875em; left: 1.25em; z-index: 1; /* Toggle menu items visibility */ display: none; }
 @media (max-width: 380px) { html body .container section #navigation:nth-of-type(2) { left: 0.3125em; width: 38.196%; } }
-html body .container section #navigation:nth-of-type(2) div { display: block; width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #f1f1f1; cursor: pointer; }
+html body .container section #navigation:nth-of-type(2) div { display: block; width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #dfdfdf; cursor: pointer; }
 html body .container section #navigation:nth-of-type(2) div span { position: relative; top: 0.625em; }
 html body .container section #navigation:nth-of-type(2) ul { display: none; }
 html body .container section #navigation:nth-of-type(2) ul li { /* Show home button */ }
