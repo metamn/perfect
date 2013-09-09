@@ -24,16 +24,17 @@ html {
           #header {
             margin-top: $minor;
           }
-          
-          article {
-            font-size: large;
-            padding: $pad*2 0;
-          }
-          
         }
         
         
         &:nth-child(2) {
+          article {
+            p {
+              span {
+                @include invert;
+              }
+            }
+          }
         }
       }
     }

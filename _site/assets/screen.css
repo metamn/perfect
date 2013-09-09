@@ -69,6 +69,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 */
 /* The basic color in Kuler */
+/* The basic design element
+--------------------------------------------------------------------------------
+
+- Every design must have a basic element which gives the tone
+- All other elements are styled upon this
+- In this case we have a 2px black line / border as the most important design element
+- This must give power to this design 
+
+*/
 /* Navigation
 --------------------------------------------------------------------------------
 
@@ -100,7 +109,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Long text like posts, with enhanced readability */
 /* Invert colors */
 body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; }
-body a { color: #3a3a3a; text-decoration: none; border-bottom: 2px solid; }
+body a { color: #3a3a3a; text-decoration: none; border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none solid none; }
 body a { color: #3a3a3a; border-bottom: none; }
 body .container { /* Headings ---------------------------------------------------------------------------
 */ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/ - They don't differ by size but decoration
@@ -124,22 +133,23 @@ body .container h3 { font-variant: small-caps; }
 body .container #header hgroup h1 { padding: 0; }
 body .container #header hgroup h1 + h2 { padding: 1.25em 0; }
 body .container p + p { margin-top: 1.25em; }
-body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 2px solid; padding: 1.25em; font-size: larger; font-style: italic; }
+body .container q, body .container blockquote { display: block; margin: 2.5em; border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none none solid; padding: 1.25em; font-size: larger; font-style: italic; }
 @media (max-width: 380px) { body .container q, body .container blockquote { margin: 1.25em 0; } }
 body .container address { font-variant: small-caps; }
+body .container hr { border: 0; border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none solid none; }
 body .container ul, body .container menu, body .container dir, body .container ol { margin: 1.25em; list-style: circle; }
-body .container ol { list-style: none; margin-left: 0; counter-reset: ol-counter; }
+body .container ol { list-style: none; margin: 2.5em 0; counter-reset: ol-counter; }
 body .container ol li { counter-increment: ol-counter; margin-bottom: 0.625em; }
-body .container ol li:before { content: counter(ol-counter,decimal); border: 2px solid; width: 1.25em; height: 1.25em; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; text-align: center; padding: 0 0.3125em 0.625em; display: inline-block; margin-right: 0.625em; }
+body .container ol li:before { content: counter(ol-counter,decimal); border-width: 2px; border-color: #3a3a3a; border-style: solid; width: 1.25em; height: 1.25em; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; text-align: center; padding: 0 0.3125em 0.625em; display: inline-block; margin-right: 0.625em; }
 body .container dl { margin: 1.25em 0; }
 body .container dl dt { font-weight: bold; text-transform: uppercase; }
 body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
-body .container table tbody { border-top: 2px solid; border-bottom: 2px solid; }
+body .container table tbody { border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: solid none none none; border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none solid none; }
 body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 0.625em; }
 @media only screen and (max-width: 766px) { body .container table td, body .container table th, body .container table tr { padding: 0.3125em; font-size: smaller; } }
-body .container table th { color: #f9f9f9; background: #3a3a3a; }
-body .container table td { border-bottom: 2px solid; }
+body .container table th { color: #f9f9f9; background: #3a3a3a; padding: 0.3125em 0.15625em; }
+body .container table td { border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none solid none; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
 body .container input, body .container textarea, body .container select { border: none; outline: 0; background: #f9f9f9; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
@@ -165,7 +175,7 @@ html body .container section { position: relative; background-position: top cent
 
 html body .container section { width: 80.902%; margin-left: 19.098%; }
 html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; font-size: larger; }
-html body .container section article a { color: #3a3a3a; text-decoration: none; border-bottom: 2px solid; }
+html body .container section article a { color: #3a3a3a; text-decoration: none; border-width: 2px; border-color: #3a3a3a; border-style: solid; border-style: none none solid none; }
 html body .container section #navigation { width: 100%; float: left; width: auto; }
 html body .container section #navigation h3, html body .container section #navigation div { display: none; }
 html body .container section #navigation ul li { cursor: pointer; /* The home button is removed from navigation list, it i shown only in the menu */ }
@@ -174,11 +184,12 @@ html body .container section #navigation ul { display: block; margin: 0; }
 html body .container section #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
 html body .container section #navigation ul li.last, html body .container section #navigation ul li:last-of-type { margin-right: 0; }
 @media only screen and (max-width: 1023px) { html body .container section #navigation ul li { margin-right: 0.625em; margin-bottom: 0.625em; } }
-html body .container section #navigation ul li { color: #3a3a3a; background: #f9f9f9; border: 0.15625em solid; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; padding: 0.625em 2.5em; font-weight: 400; }
+html body .container section #navigation ul li { color: #3a3a3a; background: #f9f9f9; border-width: 2px; border-color: #3a3a3a; border-style: solid; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; padding: 0.625em 2.5em; font-weight: 400; }
 html body .container section #navigation ul li:hover, html body .container section #navigation ul li.active { background: #faafaf; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
 @media only screen and (max-width: 766px) { html body .container section #navigation ul li { padding: 0.3125em 1.25em; } }
+@media (max-width: 380px) { html body .container section #navigation { width: 61.804%; } }
 html body .container section #navigation:nth-of-type(2) { position: fixed; top: 1.875em; left: 1.25em; z-index: 1; /* Toggle menu items visibility */ display: none; }
-@media (max-width: 380px) { html body .container section #navigation:nth-of-type(2) { left: 0.3125em; width: 38.196%; } }
+@media (max-width: 380px) { html body .container section #navigation:nth-of-type(2) { left: 0.3125em; } }
 html body .container section #navigation:nth-of-type(2) div { display: block; width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #dfdfdf; cursor: pointer; }
 html body .container section #navigation:nth-of-type(2) div span { position: relative; top: 0.625em; }
 html body .container section #navigation:nth-of-type(2) ul { display: none; }
@@ -187,4 +198,4 @@ html body .container section #navigation:nth-of-type(2) ul li:first-of-type { di
 html body .container section #navigation:nth-of-type(2).active ul { display: block; }
 html body .container section #navigation:nth-of-type(2).active div { display: none; }
 html body .container section:nth-child(1) #header { margin-top: 38.196%; }
-html body .container section:nth-child(1) article { font-size: large; padding: 2.5em 0; }
+html body .container section:nth-child(2) article p span { color: #f9f9f9; background: #3a3a3a; padding: 0.3125em 0.15625em; }

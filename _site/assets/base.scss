@@ -105,6 +105,40 @@ $gray-4: #797979;
 
 
 
+/* The basic design element
+--------------------------------------------------------------------------------
+
+- Every design must have a basic element which gives the tone
+- All other elements are styled upon this
+- In this case we have a 2px black line / border as the most important design element
+- This must give power to this design 
+
+*/
+
+@mixin border($where : all) {
+  border-width: 2px;
+  border-color: $color;
+  border-style: solid;
+  
+  @if ($where == bottom) {
+    border-style: none none solid none;
+  }
+  
+  @if ($where == left) {
+    border-style: none none none solid;
+  }
+  
+  @if ($where == top) {
+    border-style: solid none none none;
+  }
+  
+  @if ($where == right) {
+    border-style: none solid none none;
+  }
+}
+
+
+
 
 /* Navigation
 --------------------------------------------------------------------------------
@@ -142,6 +176,10 @@ $gray-4: #797979;
         @include button($color, $background);
       }
     }
+    
+    @include mobile {
+      width: $major;
+    }
   }
 }
 
@@ -157,7 +195,6 @@ $gray-4: #797979;
   
   @include mobile {
     left: $pad/4;
-    width: $minor;
   }
   
     
@@ -248,7 +285,7 @@ $gray-4: #797979;
   color: $color;
   background: $background;
   
-  border: $pad/8 solid;
+  @include border;
   @include border-radius($pad);
   padding: $pad/2 $pad*2;
   

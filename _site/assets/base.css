@@ -37,6 +37,15 @@
 
 */
 /* The basic color in Kuler */
+/* The basic design element
+--------------------------------------------------------------------------------
+
+- Every design must have a basic element which gives the tone
+- All other elements are styled upon this
+- In this case we have a 2px black line / border as the most important design element
+- This must give power to this design 
+
+*/
 /* Navigation
 --------------------------------------------------------------------------------
 
