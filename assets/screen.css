@@ -125,6 +125,7 @@ body .container #header hgroup h1 { padding: 0; }
 body .container #header hgroup h1 + h2 { padding: 1.25em 0; }
 body .container p + p { margin-top: 1.25em; }
 body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 2px solid; padding: 1.25em; font-size: larger; font-style: italic; }
+@media (max-width: 380px) { body .container q, body .container blockquote { margin: 1.25em 0; } }
 body .container address { font-variant: small-caps; }
 body .container ul, body .container menu, body .container dir, body .container ol { margin: 1.25em; list-style: circle; }
 body .container ol { list-style: none; margin-left: 0; counter-reset: ol-counter; }
@@ -137,6 +138,7 @@ body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
 body .container table tbody { border-top: 2px solid; border-bottom: 2px solid; }
 body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 0.625em; }
+@media only screen and (max-width: 766px) { body .container table td, body .container table th, body .container table tr { padding: 0.3125em; font-size: smaller; } }
 body .container table th { color: #f9f9f9; background: #3a3a3a; }
 body .container table td { border-bottom: 2px solid; }
 body .container em, body .container i { font-style: italic; }
