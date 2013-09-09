@@ -172,13 +172,13 @@ html body .container section #navigation ul li.last, html body .container sectio
 html body .container section #navigation ul li { color: #3a3a3a; background: #f9f9f9; border: 0.15625em solid; -webkit-border-radius: 1.25em; -moz-border-radius: 1.25em; -ms-border-radius: 1.25em; -o-border-radius: 1.25em; border-radius: 1.25em; padding: 0.625em 2.5em; font-weight: 400; }
 html body .container section #navigation ul li:hover, html body .container section #navigation ul li.active { background: #faafaf; -webkit-transition: all 0.25s ease-in; -moz-transition: all 0.25s ease-in; -o-transition: all 0.25s ease-in; transition: all 0.25s ease-in; }
 @media only screen and (max-width: 766px) { html body .container section #navigation ul li { padding: 0.3125em 1.25em; } }
-html body .container section #navigation:nth-of-type(2) { position: fixed; bottom: 19.098%; left: 1.25em; z-index: 1; /* Toggle menu items visibility */ }
-@media (max-width: 380px) { html body .container section #navigation:nth-of-type(2) { left: 0.3125em !important; } }
+html body .container section #navigation:nth-of-type(2) { position: fixed; top: 1.875em; left: 1.25em; z-index: 1; /* Toggle menu items visibility */ display: none; }
+@media (max-width: 380px) { html body .container section #navigation:nth-of-type(2) { left: 0.3125em; width: 38.196%; } }
 html body .container section #navigation:nth-of-type(2) div { display: block; width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #f1f1f1; cursor: pointer; }
 html body .container section #navigation:nth-of-type(2) div span { position: relative; top: 0.625em; }
 html body .container section #navigation:nth-of-type(2) ul { display: none; }
 html body .container section #navigation:nth-of-type(2).active ul { display: block; }
 html body .container section #navigation:nth-of-type(2).active div { display: none; }
-html body .container section:nth-child(1) #header { margin-top: 19.098%; }
+html body .container section:nth-child(1) #header { margin-top: 38.196%; }
 html body .container section:nth-child(1) article { font-size: large; padding: 2.5em 0; }
 html body .container section:nth-child(1) article p { /* Typer.js needs this in order to avoid flipping the rest of the content */ height: 3.75em; }

@@ -3,27 +3,18 @@ $(document).ready(function() {
   
   // Navigation, Menu: click
   $('#navigation li').click(function() {
+    // navigation
     scroll($(this));
-    var nav = $(this).parent().parent();
     
-    if (nav.hasClass('menu')) {
-      menuHide(nav);
+    // if menu is hidden then show it
+    $('#navigation.menu').show();
+    
+    // menu
+    var menu = $(this).parent().parent();
+    if (menu.hasClass('menu')) {
+      menuHide(menu);
     }
   });
-  
-  // Navigation: Scroll to the active section
-  function scroll(item) {
-    var index = item.index() + 2;
-      
-    var slide = $('section:nth-child(' + index + ')');
-    scrollTo(slide);
-    
-    /* instead of item.siblings() we use $('#navigation li') to remove all highlights if there are more than one navigations on the page */
-    /* otherwise the two or more navigations will have differently highlighted items which is confusing */
-    $('#navigation li').removeClass('active');
-    item.addClass('active');
-  }
-  
   
   // Menu: symbol click
   $('#navigation.menu div').click(function() {
@@ -41,9 +32,18 @@ $(document).ready(function() {
   }
   
   
-  
-  // jQuery Typer
-  $('[data-typer-targets]').typer();
+  // Navigation: Scroll to the active section
+  function scroll(item) {
+    var index = item.index() + 2;
+      
+    var slide = $('section:nth-child(' + index + ')');
+    scrollTo(slide);
+    
+    /* instead of item.siblings() we use $('#navigation li') to remove all highlights if there are more than one navigations on the page */
+    /* otherwise the two or more navigations will have differently highlighted items which is confusing */
+    $('#navigation li').removeClass('active');
+    item.addClass('active');
+  }
   
 
   // Scrolling to a div

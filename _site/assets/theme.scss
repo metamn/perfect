@@ -16,12 +16,13 @@ html {
           
           &:nth-of-type(2) {
             @include menu;
+            @include hidden;
           }
         }
         
         &:nth-child(1) {
           #header {
-            margin-top: $minor/2;
+            margin-top: $minor;
           }
           
           article {

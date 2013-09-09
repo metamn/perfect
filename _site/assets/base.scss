@@ -144,15 +144,17 @@ $gray-4: #797979;
 /* Transforms a navigation list into a menu 
   - the navigation must have the '.menu' class to make jQuery work
 */
-@mixin menu {
+@mixin menu() {
   position: fixed;
-  bottom: $minor/2;
+  top: $pad + $pad/2;
   left: $pad;
   z-index: 1;
   
   @include mobile {
-    left: $pad/4 !important;
+    left: $pad/4;
+    width: $minor;
   }
+  
     
   div {
     display: block;
