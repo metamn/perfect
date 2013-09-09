@@ -34,9 +34,9 @@ $(document).ready(function() {
   
   // Navigation: Scroll to the active section
   function scroll(item) {
-    var index = item.index() + 2;
-      
-    var slide = $('section:nth-child(' + index + ')');
+    var index = item.index() + 1;
+    
+    slide = (index == 1) ? '' : $('section:nth-child(' + index + ')');
     scrollTo(slide);
     
     /* instead of item.siblings() we use $('#navigation li') to remove all highlights if there are more than one navigations on the page */
@@ -47,8 +47,9 @@ $(document).ready(function() {
   
 
   // Scrolling to a div
+  // - if no div then scroll to top
   function scrollTo(div) {
-    $("html, body").animate({ scrollTop: $(div).offset().top }, "slow");
+    (div.length) ? $("html, body").animate({ scrollTop: $(div).offset().top }, "slow") : $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
   }
 });

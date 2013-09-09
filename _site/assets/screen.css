@@ -74,7 +74,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
-- It can be combined with @mixin menu
+- It can be combined with the @mixin menu
 
 */
 /* Transforms a navigation list into a menu  - the navigation must have the '.menu' class to make jQuery work
@@ -164,7 +164,8 @@ html body .container section article { max-width: 43.75em; /* 700px; */ line-hei
 html body .container section article a { color: #3a3a3a; text-decoration: none; border-bottom: 1px dotted; }
 html body .container section #navigation { width: 100%; float: left; width: auto; }
 html body .container section #navigation h3, html body .container section #navigation div { display: none; }
-html body .container section #navigation ul li { cursor: pointer; }
+html body .container section #navigation ul li { cursor: pointer; /* The home button is removed from navigation list, it i shown only in the menu */ }
+html body .container section #navigation ul li:first-of-type { display: none; }
 html body .container section #navigation ul { display: block; margin: 0; }
 html body .container section #navigation ul li { display: inline-block; list-style-type: none; margin-left: 0; float: left; margin-right: 1.25em; }
 html body .container section #navigation ul li.last, html body .container section #navigation ul li:last-of-type { margin-right: 0; }
@@ -177,6 +178,8 @@ html body .container section #navigation:nth-of-type(2) { position: fixed; top: 
 html body .container section #navigation:nth-of-type(2) div { display: block; width: 2.5em; height: 2.5em; -webkit-border-radius: 2.5em; -moz-border-radius: 2.5em; -ms-border-radius: 2.5em; -o-border-radius: 2.5em; border-radius: 2.5em; text-align: center; color: #f9f9f9; background: #f1f1f1; cursor: pointer; }
 html body .container section #navigation:nth-of-type(2) div span { position: relative; top: 0.625em; }
 html body .container section #navigation:nth-of-type(2) ul { display: none; }
+html body .container section #navigation:nth-of-type(2) ul li { /* Show home button */ }
+html body .container section #navigation:nth-of-type(2) ul li:first-of-type { display: block; }
 html body .container section #navigation:nth-of-type(2).active ul { display: block; }
 html body .container section #navigation:nth-of-type(2).active div { display: none; }
 html body .container section:nth-child(1) #header { margin-top: 38.196%; }

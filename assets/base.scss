@@ -111,7 +111,7 @@ $gray-4: #797979;
 
 - It has a <h3> title to fit the HTML5 Outliner. This is hidden by default
 - It always contains a list which can be made displayed inline, or as is
-- It can be combined with @mixin menu
+- It can be combined with the @mixin menu
 
 */
 
@@ -126,6 +126,11 @@ $gray-4: #797979;
   ul {
     li {
       cursor: pointer;
+      
+      /* The home button is removed from navigation list, it i shown only in the menu */
+      &:first-of-type {
+        display: none;
+      }
     }
   }
   
@@ -172,6 +177,14 @@ $gray-4: #797979;
   
   ul {
     display: none;
+    
+    li {
+      /* Show home button */
+      &:first-of-type {
+        display: block;
+       
+      }
+    }
   }
   
   /* Toggle menu items visibility */
