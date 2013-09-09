@@ -99,10 +99,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* The single styling is the default underline */
 /* Long text like posts, with enhanced readability */
 /* Invert colors */
-body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; font-weight: 300; }
-body td { font-weight: 300; }
-body ol li:before { font-weight: 400; }
-body a { color: #3a3a3a; text-decoration: none; border-bottom: 1px dotted; }
+body { font-size: 100%; line-height: 1.25; background: #f9f9f9; color: #3a3a3a; font-family: 'Lato', sans-serif; }
+body a { color: #3a3a3a; text-decoration: none; border-bottom: 2px solid; }
 body a { color: #3a3a3a; border-bottom: none; }
 body .container { /* Headings ---------------------------------------------------------------------------
 */ /*  - 'Traditional in em' scheme from http://lamb.cc/typograph/ - They don't differ by size but decoration
@@ -121,7 +119,7 @@ body .container { /* Headings --------------------------------------------------
 */ }
 body .container h1, body .container h2, body .container h3 { font-size: 1.5em; padding: 1.45833em 0; }
 body .container h4, body .container h5, body .container h6 { font-size: 1.16667em; padding: 1.51785em 0; }
-body .container h1 { font-weight: 400; }
+body .container h2 { font-weight: 300; }
 body .container h3 { font-variant: small-caps; }
 body .container #header hgroup h1 { padding: 0; }
 body .container #header hgroup h1 + h2 { padding: 1.25em 0; }
@@ -139,6 +137,7 @@ body .container dl dd + dt { margin-top: 2.5em; }
 body .container table { margin: 1.25em 0 2.5em; }
 body .container table tbody { border-top: 2px solid; border-bottom: 2px solid; }
 body .container table td, body .container table th, body .container table tr { text-align: left; vertical-align: top; padding: 0.625em; }
+body .container table th { color: #f9f9f9; background: #3a3a3a; }
 body .container table td { border-bottom: 2px solid; }
 body .container em, body .container i { font-style: italic; }
 body .container strong, body .container b { font-weight: bold; }
@@ -165,7 +164,7 @@ html body .container section { position: relative; background-position: top cent
 
 html body .container section { width: 80.902%; margin-left: 19.098%; }
 html body .container section article { max-width: 43.75em; /* 700px; */ line-height: 1.75; font-size: larger; }
-html body .container section article a { color: #3a3a3a; text-decoration: none; border-bottom: 1px dotted; }
+html body .container section article a { color: #3a3a3a; text-decoration: none; border-bottom: 2px solid; }
 html body .container section #navigation { width: 100%; float: left; width: auto; }
 html body .container section #navigation h3, html body .container section #navigation div { display: none; }
 html body .container section #navigation ul li { cursor: pointer; /* The home button is removed from navigation list, it i shown only in the menu */ }
