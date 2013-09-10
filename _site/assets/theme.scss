@@ -6,7 +6,7 @@ html {
       section {
         width: $major + $minor/2;
         margin-left: $minor/2;
-        background: #fff;
+        background-color: #fff;
         
         #header, header, #navigation, article, #arrows {
           margin-left: $pad;
@@ -30,6 +30,7 @@ html {
           margin-top: $pad*5;
         }
         
+        /* Startpage */
         &:nth-child(1) {
           #header {
             padding-top: $major/2;
@@ -38,6 +39,7 @@ html {
         }
         
         
+        /* Message */
         &:nth-child(2) {
           article {
             p {
@@ -47,6 +49,23 @@ html {
               }
             }
           }
+        }
+        
+        /* Attention */
+        &:nth-child(3) {
+          @include expand-slide;
+        }
+        
+        /* Story */
+        &:nth-child(4) {
+          @include small-screen {
+            
+          }
+        }
+        
+        /* Code */
+        &:nth-child(5) {
+          @include expand-slide;
         }
       }
     }

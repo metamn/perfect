@@ -27,8 +27,7 @@
 $breakpoint-mobile: 380px !default;
 $breakpoint-tablet: 767px !default;
 $breakpoint-small: 1024px !default;
-$breakpoint-large: 1279px !default;
-$breakpoint-big: 1441px !default;
+$breakpoint-large: 1441px !default;
 
 
 @mixin mobile {
@@ -60,25 +59,14 @@ $breakpoint-big: 1441px !default;
 	}
 }
 
+@mixin small-screen-and-below {
+	@media only screen and (max-width : $breakpoint-small) {
+		@content;
+	}
+}
 
 @mixin small-screen {
-	@media only screen and (min-width : $breakpoint-tablet + 1) and (max-width : $breakpoint-small - 1) {
-		@content;
-	}
-}
-@mixin small-screen-and-below {
-	@media only screen and (max-width : $breakpoint-small - 1) {
-		@content;
-	}
-}
-@mixin small-screen-and-up {
-	@media only screen and (min-width : $breakpoint-small + 1) {
-		@content;
-	}
-}
-
-@mixin normal-screen {
-  @media only screen and (min-width : $breakpoint-small) and (max-width : $breakpoint-large) {
+  @media only screen and (min-width : $breakpoint-small + 1) and (max-width : $breakpoint-large) {
 		@content;
 	}
 }
@@ -89,11 +77,6 @@ $breakpoint-big: 1441px !default;
 	}
 }
 
-@mixin big-screen {
-	@media only screen and (min-width : $breakpoint-big + 1) {
-		@content;
-	}
-}
 
 @media only screen and (max-width : $breakpoint-tablet) {
   .mobile { display: block; }

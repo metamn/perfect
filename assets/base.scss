@@ -70,8 +70,38 @@ $body: 43.75em; /* 700px, for the holder of long texts */
           background-repeat: no-repeat;
           background-size: cover;
           background-attachment: fixed;
+          
+          @include small-screen-and-below {
+            @include separator;
+            
+            #arrows {
+              display: none;
+            }
+          }
         }
       }
+    }
+  }
+}
+
+/* Separate slides on small screens */
+@mixin separator {
+  padding-bottom: $pad*4;
+  
+  &:last-of-type {
+    border: none;
+    padding-bottom: $pad;
+  }
+}
+
+/* Expand slide on small screens */
+@mixin expand-slide {
+  @include small-screen {
+    height: auto;
+    @include separator;
+    
+    #arrows {
+      display: none;
     }
   }
 }
@@ -194,7 +224,7 @@ $gray-4: #797979;
   z-index: 1;
   
   @include mobile {
-    left: $pad/4;
+    left: -$pad/2;
   }
   
   /* The menu button */  
@@ -260,6 +290,8 @@ $gray-4: #797979;
       }
     }
   }
+  
+  
 }
 
 
