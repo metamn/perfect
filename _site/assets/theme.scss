@@ -6,6 +6,11 @@ html {
       section {
         width: $major + $minor/2;
         margin-left: $minor/2;
+        background: #fff;
+        
+        #header, header, #navigation, article, #arrows {
+          margin-left: $pad;
+        }
         
         article {
           @include text(body);
@@ -27,7 +32,8 @@ html {
         
         &:nth-child(1) {
           #header {
-            margin-top: $minor;
+            padding-top: $major/2;
+            margin-bottom: $pad;
           }
         }
         
@@ -37,6 +43,7 @@ html {
             p {
               span {
                 @include invert;
+                font-style: italic;
               }
             }
           }
