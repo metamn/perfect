@@ -34,6 +34,11 @@ $(document).ready(function() {
   
   // Arrow click
   $('#arrows li').click(function() {
+    // remove highlights from navigation
+    // - otherwise when you scroll back to the first page a navigation item is highlighted
+    $('#navigation li').removeClass('active');
+    
+    // do the navigation
     var direction = $(this).index();
     var parent = $(this).parent().parent().parent();
     var index = parent.index();
